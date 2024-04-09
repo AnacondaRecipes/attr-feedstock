@@ -34,6 +34,12 @@ about:
   summary: Commands for Manipulating Filesystem Extended Attributes
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/47182
+    reason: Dependency for libcap
+  recipe-maintainers:
+    - ianaobi
+
   recipe-maintainers:
     - scopatz
     - saraedum
