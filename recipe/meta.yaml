@@ -1,22 +1,23 @@
 {% set name = "attr" %}
-{% set version = "2.5.1" %}
+{% set version = "2.5.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://download.savannah.gnu.org/releases/attr/attr-{{ version }}.tar.gz
-  sha256: bae1c6949b258a0d68001367ce0c741cebdacdd3b62965d17e5eb23cd78adaf8
+  url: https://download.savannah.gnu.org/releases/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 39bf67452fa41d0948c2197601053f48b3d78a029389734332a6309a680c6c87
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage('attr', max_pin='x.x') }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - make
 
@@ -32,6 +33,9 @@ about:
     - doc/COPYING
     - doc/COPYING.LGPL
   summary: Commands for Manipulating Filesystem Extended Attributes
+  description: Commands for Manipulating Filesystem Extended Attributes
+  dev_url: https://cgit.git.savannah.gnu.org/cgit/attr.git
+  doc_url: http://savannah.nongnu.org/projects/attr
 
 extra:
   recipe-maintainers:
