@@ -38,6 +38,12 @@ about:
   doc_url: http://savannah.nongnu.org/projects/attr
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/47182
+    reason: Dependency for libcap
+  recipe-maintainers:
+    - ianaobi
+
   recipe-maintainers:
     - scopatz
     - saraedum
